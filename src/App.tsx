@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/index.scss';
 import Button, { ButtonSize, ButtonType } from './components/Button/index'
 import Alert, { AlertType } from './components/Alert/index'
 
 function App() {
+  const [state, setState] = useState(false)
   return (
     <div className="App">
       <Button
         btnType={ButtonType.Default}
         size={ButtonSize.Small}
+        onClick={() => { setState(!state) }}
       >
         Default
       </Button>
@@ -52,10 +54,10 @@ function App() {
       >
         disabled Link
       </Button>
-      <Alert alertType={AlertType.Default} title='Default' description='hhh'></Alert>
-      <Alert alertType={AlertType.Success} title='Success'></Alert>
-      <Alert alertType={AlertType.Danger} title='Danger'></Alert>
-      <Alert alertType={AlertType.Warning} title='Warning' closable={false}></Alert>
+      <Alert alertType={AlertType.Default} title='Default' description='hhh' onClose={() => { setState(!state) }} visible={state}></Alert>
+      <Alert alertType={AlertType.Success} title='Success' visible></Alert>
+      <Alert alertType={AlertType.Danger} title='Danger' visible></Alert>
+      <Alert alertType={AlertType.Warning} title='Warning' closable={false} visible></Alert>
     </div>
   );
 }
