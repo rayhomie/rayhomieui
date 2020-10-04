@@ -1,24 +1,61 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/index.scss';
+import Button, { ButtonSize, ButtonType } from './components/Button/index'
+import Alert, { AlertType } from './components/Alert/index'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Button
+        btnType={ButtonType.Default}
+        size={ButtonSize.Small}
+      >
+        Default
+      </Button>
+      <Button
+        btnType={ButtonType.Primary}
+        size={ButtonSize.Small}
+      >
+        Primary
+      </Button>
+      <Button
+        btnType={ButtonType.Primary}
+        size={ButtonSize.Large}
+      >
+        Large Primary
+      </Button>
+      <Button
+        btnType={ButtonType.Danger}
+        size={ButtonSize.Small}
+      >
+        Danger
+      </Button>
+      <Button
+        btnType={ButtonType.Default}
+        size={ButtonSize.Small}
+        disabled
+      >
+        disabled
+      </Button>
+      <Button
+        btnType={ButtonType.Link}
+        size={ButtonSize.Small}
+        href='http://www.baidu.com/'
+      >
+        baidu Link
+      </Button>
+      <Button
+        btnType={ButtonType.Link}
+        size={ButtonSize.Small}
+        href='http://www.baidu.com/'
+        disabled
+      >
+        disabled Link
+      </Button>
+      <Alert alertType={AlertType.Default} title='Default' description='hhh'></Alert>
+      <Alert alertType={AlertType.Success} title='Success'></Alert>
+      <Alert alertType={AlertType.Danger} title='Danger'></Alert>
+      <Alert alertType={AlertType.Warning} title='Warning' closable={false}></Alert>
     </div>
   );
 }
