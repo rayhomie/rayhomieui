@@ -220,7 +220,7 @@ export default App;
       </Button>
 ```
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20201004142419614.png#pic_center)
+![button](https://github.com/rayhomie/rayhomieUI/blob/master/public/img/20201004142419614.png)
 
 ### 三、Alert组件
 
@@ -377,7 +377,7 @@ const [state, setState] = useState(false);
 <Alert alertType={AlertType.Warning} title='Warning' closable={false} visible></Alert>
 ```
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20201004155259299.gif#pic_center)
+![alert](https://github.com/rayhomie/rayhomieUI/blob/master/public/img/20201004155259299.gif)
 
 
 
@@ -597,4 +597,4 @@ export default MenuItem
 </Menu>
 ```
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2020100516420146.gif#pic_center)
+![menu](https://github.com/rayhomie/rayhomieUI/blob/master/public/img/20201004144142411.gif)
