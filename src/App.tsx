@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './styles/index.scss';
 import Button, { ButtonSize, ButtonType } from './components/Button/index'
 import Alert, { AlertType } from './components/Alert/index'
+import Menu from './components/Menu/index';
+import MenuItem from './components/Menu/MenuItem';
 
 function App() {
   const [state, setState] = useState(false)
@@ -58,6 +60,18 @@ function App() {
       <Alert alertType={AlertType.Success} title='Success' visible></Alert>
       <Alert alertType={AlertType.Danger} title='Danger' visible></Alert>
       <Alert alertType={AlertType.Warning} title='Warning' closable={false} visible></Alert>
+      <Menu defaultIndex={0} onSelect={(i) => alert(i)} mode='vertical'>
+        <MenuItem index={0}>cool link1</MenuItem>
+        <MenuItem index={1}>cool link2</MenuItem>
+        <MenuItem index={2}>cool link3</MenuItem>
+        <MenuItem index={3} disabled>cool link4</MenuItem>
+      </Menu>
+      <Menu defaultIndex={0} onSelect={(i) => alert(i)}>
+        <MenuItem index={0}>cool link1</MenuItem>
+        <MenuItem index={1}>cool link2</MenuItem>
+        <MenuItem index={2}>cool link3</MenuItem>
+        <MenuItem index={3} disabled>cool link4</MenuItem>
+      </Menu>
     </div>
   );
 }
