@@ -2,8 +2,8 @@ import React, { useContext } from 'react'
 import classNames from 'classnames';
 import { MenuContext } from './index'
 
-interface MenuItemProps {
-    index: number//每个item不用的索引值
+export interface MenuItemProps {
+    index?: number//每个item不用的索引值
     disabled?: boolean//是否可用
     className?: string
     style?: React.CSSProperties
@@ -18,7 +18,7 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
     })
     const handleClick = () => {
         //点击li触发onSelect方法并传递相应index给父组件
-        if (context.onSelect && !disabled) context.onSelect(index)
+        if (context.onSelect && !disabled && (typeof index === 'number')) context.onSelect(index)
     }
     return (
         <li className={classes} style={style} onClick={handleClick}>
@@ -26,5 +26,5 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
         </li>
     )
 }
-MenuItem.displayName = 'MenuItem'
+MenuItem.displayName = 'MenuItem'//添加displayName标记
 export default MenuItem

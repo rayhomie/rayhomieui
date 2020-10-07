@@ -61,10 +61,11 @@ function App() {
       <Alert alertType={AlertType.Danger} title='Danger' visible></Alert>
       <Alert alertType={AlertType.Warning} title='Warning' closable={false} visible></Alert>
       <Menu defaultIndex={0} onSelect={(i) => alert(i)} mode='vertical'>
-        <MenuItem index={0}>cool link1</MenuItem>
-        <MenuItem index={1}>cool link2</MenuItem>
-        <MenuItem index={2}>cool link3</MenuItem>
-        <MenuItem index={3} disabled>cool link4</MenuItem>
+        <MenuItem>cool link1</MenuItem>
+        <MenuItem>cool link2</MenuItem>
+        <MenuItem>cool link3</MenuItem>
+        <MenuItem disabled>cool link4</MenuItem>
+        <li>1111</li>
       </Menu>
       <Menu defaultIndex={0} onSelect={(i) => alert(i)}>
         <MenuItem index={0}>cool link1</MenuItem>

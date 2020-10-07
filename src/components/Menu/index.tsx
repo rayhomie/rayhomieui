@@ -1,5 +1,6 @@
 import React, { useState, createContext } from 'react'
 import classNames from 'classnames';
+import { MenuItemProps } from './MenuItem';
 
 type MenuMode = 'horizontal' | 'vertical'
 type selectCallback = (selectedIndex: number) => void
@@ -21,6 +22,7 @@ export const MenuContext = createContext<MenuContext>({ index: 0 })
 
 const Menu: React.FC<MenuProps> = (props) => {
     const { defaultIndex, mode, children, className, style, onSelect } = props
+    //使用context所有的状态都由父组件进行控制
     const [Active, setActive] = useState(defaultIndex)//由父组件进行所有状态的维护
     const classes = classNames('menu', className, {
         'menu-vertical': mode === 'vertical'
@@ -34,11 +36,23 @@ const Menu: React.FC<MenuProps> = (props) => {
         index: Active || 0,//将状态共享
         onSelect: handleClick//将函数共享
     }
-    //使用context所有的状态都由父组件进行控制
+
+    const renderChildren = () => {
+        return React.Children.map(children, (child, index) => {
+            const childElement = child as React.FunctionComponentElement<MenuItemProps>//类型断言
+            const { displayName } = childElement.type//取出child的displayName
+            if (displayName === 'MenuItem') {
+                return React.cloneElement(childElement, { index })
+            } else {
+                console.error('Warning: Menu has a child which is not a MenuItem component')
+            }
+
+        })
+    }
     return (
         <ul className={classes} style={style}>
             <MenuContext.Provider value={passedContext}>{/*提供者*/}
-                {children}
+                {renderChildren()}
             </MenuContext.Provider>
         </ul>
     )
