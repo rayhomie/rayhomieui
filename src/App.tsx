@@ -5,6 +5,8 @@ import Alert, { AlertType } from './components/Alert/Alert'
 import Menu from './components/Menu/Menu';
 import MenuItem from './components/Menu/MenuItem';
 import SubMenu from './components/Menu/SubMenu'
+import Tabs from './components/Tabs/Tabs'
+import TabItem from './components/Tabs/TabItem'
 
 function App() {
   const [state, setState] = useState(false)
@@ -78,6 +80,23 @@ function App() {
         </SubMenu>
         <MenuItem disabled>cool link4</MenuItem>
       </Menu>
+      <Tabs onSelect={(i) => { alert(i) }}>
+        <TabItem labal='card1'>this is card1</TabItem>
+        <TabItem labal='card2'>this is card2</TabItem>
+        <TabItem labal='card3' disabled>this is card3</TabItem>
+        <TabItem labal='card4'>
+          <h2>this is card4 title</h2><main>this is card4</main>
+        </TabItem>
+      </Tabs>
+      <Tabs onSelect={(i) => { alert(i) }} type='card'>
+        <TabItem labal='card1'>this is card1</TabItem>
+        <TabItem labal='card2'>this is card2</TabItem>
+        <TabItem labal='card3' disabled>this is card3</TabItem>
+        <TabItem labal='card4'>
+          <h2>this is card4 title</h2><main>this is card4</main>
+        </TabItem>
+        <li>111</li>
+      </Tabs>
     </div>
   );
 }
