@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import classNames from 'classnames';
-import { MenuContext } from './index'
+import { MenuContext } from './Menu'
 
 export interface MenuItemProps {
     index?: string//每个item不用的索引值

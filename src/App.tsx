@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './styles/index.scss';
-import Button, { ButtonSize, ButtonType } from './components/Button/index'
-import Alert, { AlertType } from './components/Alert/index'
-import Menu from './components/Menu/index';
+import Button, { ButtonSize, ButtonType } from './components/Button/Button'
+import Alert, { AlertType } from './components/Alert/Alert'
+import Menu from './components/Menu/Menu';
 import MenuItem from './components/Menu/MenuItem';
 import SubMenu from './components/Menu/SubMenu'
 

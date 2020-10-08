@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';//使用测试框架render
-import Button from './index';//导入测试组件
+import Button from './Button';//导入测试组件
 
 describe('test Button component', () => {
     it('should render the correct default button', () => {
