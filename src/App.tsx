@@ -101,9 +101,14 @@ function App() {
           </TabItem>
           <li>111</li>
         </Tabs>
+        <Icon icon='arrow-down' size='6x' rotation={180} theme='success' />
+        <Icon icon='arrow-down' size='6x' rotation={180} theme='warning' />
+        <Icon icon='arrow-down' size='6x' rotation={180} theme='primary' />
+        <Icon icon='arrow-down' size='6x' rotation={180} theme='secondary' />
+        <Icon icon='arrow-down' size='6x' rotation={180} theme='info' />
+        <Icon icon='arrow-down' size='6x' rotation={180} theme='danger' />
       </div>
-      <Icon icon='arrow-down' size='6x' rotation={180} border theme='success' />
-      <Icon icon='arrow-down' size='6x' rotation={180} border theme='danger' />
+
     </div>
   );
 }
