@@ -1,6 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
-import { CSSTransition } from 'react-transition-group';
+// import { CSSTransition } from 'react-transition-group';
+import Transition from '../Transition/Transition';
 
 export enum AlertType {
     Default = 'default',
@@ -28,7 +29,8 @@ const Alert: React.FC<BaseAlertProps> = (props) => {
     })
     const onclose = onClose as () => void //类型断言
     return (<>
-        <CSSTransition
+
+        {/* <CSSTransition
             in={visible}//为true进入显示组件（主要通过in属性来控制组件状态）
             classNames="card"//设置类名的前缀
             timeout={400}//设置过渡动画事件
@@ -44,7 +46,24 @@ const Alert: React.FC<BaseAlertProps> = (props) => {
                         onclose()
                     }}>关闭</span>
             </div>
-        </CSSTransition>
+        </CSSTransition> */}
+
+        <Transition
+            in={visible}//为true进入显示组件（主要通过in属性来控制组件状态）
+            animation='zoom-in-left'
+            timeout={400}//设置过渡动画事件
+        >
+            <div
+                className={classes}
+            >
+                <span className='alt-title'>{title}</span>
+                <p className='alt-description'>{description}</p>
+                <span className={closeIconClasses || 'alt-close-none'}
+                    onClick={() => {
+                        onclose()
+                    }}>关闭</span>
+            </div>
+        </Transition>
     </>)
 }
 Alert.defaultProps = {
