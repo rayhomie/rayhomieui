@@ -2,6 +2,10 @@ import React from 'react'
 import classNames from 'classnames'
 // import { CSSTransition } from 'react-transition-group';
 import Transition from '../Transition/Transition';
+import Icon from '../Icon/Icon'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+library.add(fas)
 
 export enum AlertType {
     Default = 'default',
@@ -14,18 +18,18 @@ interface BaseAlertProps {
     alertType?: AlertType
     description?: string//描述
     title: string//标题
-    closable?: boolean//是否显示关闭图标
+    closeable?: boolean//是否显示关闭图标
     onClose?: () => void//关闭alert时触发的事件
     visible: boolean//显示状态
 }
 
 const Alert: React.FC<BaseAlertProps> = (props) => {
-    const { className, alertType, title, description, closable, onClose, visible } = props
+    const { className, alertType, title, description, closeable, onClose, visible } = props
     const classes = classNames('alt', className, {
         [`alt-${alertType}`]: alertType,
     })
     const closeIconClasses = classNames({
-        'alt-close': closable//true就显示类名，false类名为null，执行alt-close-none
+        'alt-close': closeable//true就显示类名，false类名为null，执行alt-close-none
     })
     const onclose = onClose as () => void //类型断言
     return (<>
@@ -58,16 +62,19 @@ const Alert: React.FC<BaseAlertProps> = (props) => {
             >
                 <span className='alt-title'>{title}</span>
                 <p className='alt-description'>{description}</p>
-                <span className={closeIconClasses || 'alt-close-none'}
-                    onClick={() => {
-                        onclose()
-                    }}>关闭</span>
+                <span className={closeIconClasses || 'alt-close-none'}>
+                    <Icon icon='window-close' size='1x'
+                        onClick={() => {
+                            onclose()
+                        }}
+                    />
+                </span>
             </div>
         </Transition>
     </>)
 }
 Alert.defaultProps = {
-    closable: true,
+    closeable: true,
     alertType: AlertType.Default,
     onClose: () => { }
 }

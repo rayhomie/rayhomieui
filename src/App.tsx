@@ -66,7 +66,7 @@ function App() {
         <Alert alertType={AlertType.Default} title='Default' description='hhh' onClose={() => { setState(!state) }} visible={state}></Alert>
         <Alert alertType={AlertType.Success} title='Success' visible></Alert>
         <Alert alertType={AlertType.Danger} title='Danger' visible></Alert>
-        <Alert alertType={AlertType.Warning} title='Warning' closable={false} visible></Alert>
+        <Alert alertType={AlertType.Warning} title='Warning' closeable={false} visible></Alert>
         <Menu defaultIndex={'0'} onSelect={(i) => alert(i)} mode='vertical'>
           <MenuItem>cool link1</MenuItem>
           <MenuItem>cool link2</MenuItem>
