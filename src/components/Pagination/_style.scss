@@ -1,0 +1,80 @@
+.generateList {
+    display: flex;
+    flex-direction: row;
+    color: rosybrown;
+    width: fit-content;
+    user-select: none;
+
+    .item {
+        border: 1px solid beige;
+        border-radius: 3px;
+        margin: 2px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f5f5f5;
+        cursor: pointer;
+
+        &.disabled {
+            border: 1px solid #d9d9d9;
+            pointer-events: none;
+        }
+
+        &:hover {
+            transition: background-color .1s ease-in-out, color .1s ease-in-out;
+            background-color: burlywood;
+            color: #fff;
+        }
+    }
+
+    .active {
+        background-color: burlywood;
+        color: #fff;
+    }
+
+    .active-disabled {
+        background-color: #dbdbdb;
+        color: #fff;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .show {
+        display: flex;
+    }
+
+    &.disabled {
+        color: rgba(0, 0, 0, 0.25);
+    }
+
+    &.disabled:hover {
+        cursor: not-allowed;
+    }
+
+    .quickJumper {
+        border: 2px solid transparent;
+        height: 30px;
+        width: 30px;
+        border: 1px solid beige;
+        border-radius: 3px;
+        color: burlywood;
+        text-align: center;
+        outline: none;
+        margin: 2px;
+
+        :center &:focus {
+            border: 2px solid rgba(222, 184, 135, 0.212);
+
+        }
+
+        &.disabled {
+            pointer-events: none;
+            background-color: #dbdbdb5d;
+            border: 1px solid #d9d9d9;
+        }
+    }
+}

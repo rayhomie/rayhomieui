@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
 import './styles/index.scss';
-import Button, { ButtonSize, ButtonType } from './components/Button/Button'
-import Alert, { AlertType } from './components/Alert/Alert'
-import Menu from './components/Menu/Menu';
-import MenuItem from './components/Menu/MenuItem';
-import SubMenu from './components/Menu/SubMenu'
-import Tabs from './components/Tabs/Tabs'
-import TabItem from './components/Tabs/TabItem'
-import Icon from './components/Icon/Icon';
+// import Button, { ButtonSize, ButtonType } from './components/Button/Button'
+// import Alert, { AlertType } from './components/Alert/Alert'
+// import Menu from './components/Menu/Menu';
+// import MenuItem from './components/Menu/MenuItem';
+// import SubMenu from './components/Menu/SubMenu'
+// import Tabs from './components/Tabs/Tabs'
+// import TabItem from './components/Tabs/TabItem'
+// import Icon from './components/Icon/Icon';
+import Pagination from './components/Pagination/Pagination'
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
+
 library.add(fas)
 function App() {
   const [state, setState] = useState(false)
   return (
     <div className="App">
-      <div>
+      {/* <div>
         <Button
           btnType={ButtonType.Default}
           size={ButtonSize.Small}
@@ -107,8 +109,11 @@ function App() {
         <Icon icon='arrow-down' size='6x' rotation={180} theme='secondary' />
         <Icon icon='arrow-down' size='6x' rotation={180} theme='info' />
         <Icon icon='arrow-down' size='6x' rotation={180} theme='danger' />
-      </div>
+      </div> */}
+      <Pagination total={500} pageSize={10} disabled className='hhh' />
 
+      <Pagination total={500} pageSize={10} className='hhh' onChange={(p) => { console.log(p) }} />
+      <Pagination total={4} pageSize={1} className='hhh' showQuickJumper onChange={(p) => { console.log(p) }} />
     </div>
   );
 }
