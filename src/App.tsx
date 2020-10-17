@@ -9,6 +9,8 @@ import './styles/index.scss';
 // import TabItem from './components/Tabs/TabItem'
 // import Icon from './components/Icon/Icon';
 import Pagination from './components/Pagination/Pagination'
+import Page from './PaginationTest';
+
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
@@ -110,10 +112,12 @@ function App() {
         <Icon icon='arrow-down' size='6x' rotation={180} theme='info' />
         <Icon icon='arrow-down' size='6x' rotation={180} theme='danger' />
       </div> */}
-      <Pagination total={500} pageSize={10} disabled className='hhh' />
 
-      <Pagination total={500} pageSize={10} className='hhh' onChange={(p) => { console.log(p) }} />
-      <Pagination total={4} pageSize={1} className='hhh' showQuickJumper onChange={(p) => { console.log(p) }} />
+      
+      <Pagination total={500} pageSize={10} disabled className='hhh' />
+      {/* <Pagination total={500} pageSize={10} className='hhh' onChange={(p) => { console.log(p) }} />
+      <Pagination total={4} pageSize={1} className='hhh' showQuickJumper onChange={(p) => { console.log(p) }} /> */}
+      <Page />
     </div>
   );
 }
