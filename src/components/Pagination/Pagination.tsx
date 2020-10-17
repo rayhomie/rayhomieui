@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import classnames from 'classnames'
+import Transition from '../Transition/Transition'
 
 interface PaginationProps {
     className?: string
@@ -24,11 +25,12 @@ const Pagination: React.FC<PaginationProps> = (props) => {
         showQuickJumper
     } = props
     const [cur, setCur] = useState(current)
+    const [jumperTopic, setJumperTopic] = useState(false)
     useEffect(() => {
         if (onChange && cur) {
             onChange(cur)
         }
-    }, [cur])
+    }, [cur, onChange])
     const getPageNum = (total: number, pageSize: number): number => {
         return Math.ceil(total / pageSize)
     }
@@ -117,8 +119,8 @@ const Pagination: React.FC<PaginationProps> = (props) => {
             >
                 {'>'}
             </div>
-            <div style={{ marginLeft: '20px' }}>
-                <div>跳至
+            {showQuickJumper ? <div style={{ marginLeft: '20px' }} id='jump'>
+                <div className='main-jumperTopic'>跳至
                     <input
                         className={classnames('quickJumper', {
                             disabled
@@ -134,11 +136,27 @@ const Pagination: React.FC<PaginationProps> = (props) => {
                                 if (value > 0 && value <= pageNum) {
                                     setCur(value)
                                 }
+                                inputRef.current.value = ''
                             };
-                        }
-                        }
-                    />页</div>
-            </div>
+                        }}
+                        onFocus={() => {
+                            setJumperTopic(true)
+                        }}
+                        onBlur={() => {
+                            setJumperTopic(false)
+                        }}
+                    />
+                    <Transition
+                        in={jumperTopic}
+                        animation='zoom-in-bottom'
+                        timeout={300}
+                        className='Topic'
+                    >
+                        <div>输入后回车</div>
+                    </Transition>
+                    页
+                    </div>
+            </div> : <></>}
         </div>
     )
 }

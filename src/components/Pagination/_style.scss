@@ -78,3 +78,19 @@
         }
     }
 }
+
+.main-jumperTopic {
+    position: relative;
+}
+
+.Topic {
+    position: absolute;
+    bottom: 100%;
+    left: 24%;
+    font: outline;
+    font-size: 5px;
+    color: #fff;
+    border: 1px solid #ccc;
+    background-color: #ccc;
+    border-radius: 4px;
+}
