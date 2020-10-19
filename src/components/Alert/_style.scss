@@ -1,74 +1,75 @@
 .alt {
-    position: relative;
-    padding: 0.75rem 1.25rem;
-    margin-bottom: 1rem;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  user-select: none;
 }
 
 .alt-default {
-    color: #fff;
-    background: #0d6efd;
-    border-color: #0262ef;
+  color: #fff;
+  background: #0d6efd;
+  border-color: #0262ef;
 }
 
 .alt-success {
-    color: #fff;
-    background: #52c41a;
-    border-color: #49ad17;
+  color: #fff;
+  background: #52c41a;
+  border-color: #49ad17;
 }
 
 .alt-danger {
-    color: #fff;
-    background: #dc3545;
-    border-color: #d32535;
+  color: #fff;
+  background: #dc3545;
+  border-color: #d32535;
 }
 
 .alt-warning {
-    color: #fff;
-    background: #fadb14;
-    border-color: #efd005;
+  color: #fff;
+  background: #fadb14;
+  border-color: #efd005;
 }
 
 .alt-title {}
 
 .alt-description {
-    font-size: 0.875rem;
-    margin: 0.3rem 0 0;
+  font-size: 0.875rem;
+  margin: 0.3rem 0 0;
 }
 
 .alt-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0.75rem 1.25rem;
-    color: inherit;
-    cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.75rem 1.25rem;
+  color: inherit;
+  cursor: pointer;
 }
 
 .alt-close-none {
-    display: none;
+  display: none;
 }
 
 .card-enter,
 .card-appear {
-    opacity: 0;
-    transform: scale(.8);
+  opacity: 0;
+  transform: scale(.8);
 }
 
 .card-enter-active,
 .card-appear-active {
-    opacity: 1;
-    transform: scale(1);
-    transition: opacity 300ms, transform 300ms;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
 }
 
 .card-exit {
-    opacity: 1;
+  opacity: 1;
 }
 
 .card-exit-active {
-    opacity: 0;
-    transform: scale(.8);
-    transition: opacity 300ms, transform 300ms;
+  opacity: 0;
+  transform: scale(.8);
+  transition: opacity 300ms, transform 300ms;
 }
