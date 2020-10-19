@@ -9,18 +9,31 @@ import Tabs from './components/Tabs/Tabs'
 import TabItem from './components/Tabs/TabItem'
 import Icon from './components/Icon/Icon';
 import Pagination from './components/Pagination/Pagination'
-import Page from './PaginationTest';
+import Page from './test/PaginationTest';
 import Input from './components/Input/Input';
 import AutoComplete from './components/AutoComplete/AutoComplete'
+import useDraggable from './hooks/useDraggable'
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
+
+
 
 library.add(fas)
 const lakers = ['cook', 'AD', 'james', 'green', 'howard', 'kuzma', 'McGee', 'rando', 'bradley', 'pope', 'caruso']
 function App() {
   const [state, setState] = useState(false)
+  const { Ref, MouseDown, MouseMove, MouseUp } = useDraggable()
   return (
     <div className="App">
+      {<img
+        src={process.env.PUBLIC_URL + '/logo512.png'}
+        onMouseDown={MouseDown}
+        onMouseMove={MouseMove}
+        onMouseUp={MouseUp}
+        ref={Ref}
+        style={{ position: 'absolute', zIndex: 99 }}
+      />}
+      {/* <DraggableTest /> */}
       <Input size='sm' style={{ width: '300px' }} icon="coffee" prepend='www.' append='.com' onChange={(e) => { console.log(e.target.value); }} />
       <AutoComplete fetchSuggestions={(query) => lakers.filter(name => name.includes(query.toLowerCase()))} value='1' />
       <div>

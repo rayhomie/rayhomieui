@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Pagination from './components/Pagination/Pagination';
+import Pagination from '../components/Pagination/Pagination';
 interface Props {
 
 }
