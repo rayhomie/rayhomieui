@@ -15,6 +15,7 @@ import AutoComplete from './components/AutoComplete/AutoComplete'
 import useDraggable from './hooks/useDraggable'
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import Upload from './components/Upload/Upload';
 
 
 
@@ -22,19 +23,25 @@ library.add(fas)
 const lakers = ['cook', 'AD', 'james', 'green', 'howard', 'kuzma', 'McGee', 'rando', 'bradley', 'pope', 'caruso']
 function App() {
   const [state, setState] = useState(false)
-  const { Ref, MouseDown, MouseMove, MouseUp } = useDraggable()
+  // const { Ref, MouseDown, MouseMove, MouseUp } = useDraggable()
   return (
     <div className="App">
-      {<img
+      <Upload
+        action='https://www.mocky.io/v2/5cc8019d300000980a055e76'
+        onProgress={(e, f) => { console.log(e, f) }}
+        // onSuccess={(e, f) => { console.log(e, f) }}
+        // onError={(e, f) => { console.log(e, f) }}
+      />
+      {/* {<img
         src={process.env.PUBLIC_URL + '/logo512.png'}
         onMouseDown={MouseDown}
         onMouseMove={MouseMove}
         onMouseUp={MouseUp}
         ref={Ref}
         style={{ position: 'absolute', zIndex: 99 }}
-      />}
+      />} */}
       {/* <DraggableTest /> */}
-      <Input size='sm' style={{ width: '300px' }} icon="coffee" prepend='www.' append='.com' onChange={(e) => { console.log(e.target.value); }} />
+      {/* <Input size='sm' style={{ width: '300px' }} icon="coffee" prepend='www.' append='.com' onChange={(e) => { console.log(e.target.value); }} />
       <AutoComplete fetchSuggestions={(query) => lakers.filter(name => name.includes(query.toLowerCase()))} value='1' />
       <div>
         <Button
@@ -133,7 +140,7 @@ function App() {
       <Pagination total={500} pageSize={10} disabled className='hhh' />
       <Pagination total={500} pageSize={10} className='hhh' onChange={(p) => { console.log(p) }} />
       <Pagination total={4} pageSize={1} className='hhh' showQuickJumper onChange={(p) => { console.log(p) }} />
-      <Page />
+      <Page /> */}
     </div>
   );
 }
