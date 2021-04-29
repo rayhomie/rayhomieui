@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 export declare enum AlertType {
     Default = "default",
     Success = "success",
@@ -7,7 +7,7 @@ export declare enum AlertType {
 }
 interface BaseAlertProps {
     className?: string;
-    alertType?: AlertType;
+    alertType?: "default" | "success" | "danger" | "warning";
     description?: string;
     title: string;
     closeable?: boolean;
