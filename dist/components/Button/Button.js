@@ -43,9 +43,9 @@ var Button = function (props) {
     var classes = classNames("btn", className, (_a = {},
         _a["btn-" + btnType] = btnType,
         _a["btn-" + size] = size,
-        _a.disabled = btnType === ButtonType["Link"] && disabled,
+        _a.disabled = btnType === "link" && disabled,
         _a));
-    if (btnType === ButtonType["Link"] && href) {
+    if (btnType === "link" && href) {
         //如果是link类型
         return (React.createElement("a", __assign({ className: classes, href: href }, restProps), children));
     }
@@ -56,6 +56,6 @@ var Button = function (props) {
 };
 Button.defaultProps = {
     disabled: false,
-    btnType: ButtonType.Default,
+    btnType: "default",
 };
 export default Button;
