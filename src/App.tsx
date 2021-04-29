@@ -39,9 +39,9 @@ function App() {
         onMouseUp={MouseUp}
         ref={Ref}
         style={{ position: 'absolute', zIndex: 99 }}
-      />} */}
-      {/* <DraggableTest /> */}
-      {/* <Input size='sm' style={{ width: '300px' }} icon="coffee" prepend='www.' append='.com' onChange={(e) => { console.log(e.target.value); }} />
+      />}
+      <DraggableTest /> */}
+      <Input size='sm' style={{ width: '300px' }} icon="coffee" prepend='www.' append='.com' onChange={(e) => { console.log(e.target.value); }} />
       <AutoComplete fetchSuggestions={(query) => lakers.filter(name => name.includes(query.toLowerCase()))} value='1' />
       <div>
         <Button
@@ -140,7 +140,7 @@ function App() {
       <Pagination total={500} pageSize={10} disabled className='hhh' />
       <Pagination total={500} pageSize={10} className='hhh' onChange={(p) => { console.log(p) }} />
       <Pagination total={4} pageSize={1} className='hhh' showQuickJumper onChange={(p) => { console.log(p) }} />
-      <Page /> */}
+      <Page />
     </div>
   );
 }
