@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "esnext",
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "declaration": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["src"],
+  "exclude": [
+    "src/**/*.test.tsx",
+    "src/test",
+    "src/setupTests.ts",
+    "src/serviceWorker.ts",
+    "src/react-app-env.d.ts",
+    "src/index1.tsx",
+    "src/App.tsx"
+  ]
+}
