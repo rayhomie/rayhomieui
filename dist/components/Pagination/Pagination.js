@@ -81,7 +81,8 @@ var Pagination = function (props) {
             setCur(cur + 1);
         }
     };
-    var inputRef = useRef(document.createElement("input"));
+    // @ts-ignore
+    var inputRef = useRef("");
     return (React.createElement("div", { className: classnames("generateList", className, {
             disabled: disabled,
         }), style: style },

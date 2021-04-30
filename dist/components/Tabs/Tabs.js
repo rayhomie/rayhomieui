@@ -26,7 +26,7 @@ var Tabs = function (props) {
                 return React.cloneElement(childElement, { index: index });
             }
             else {
-                console.error("Warning: Menu has a child which is not a TabItem component");
+                console.error("Warning: Tabs has a child which is not a Tabs.Item component");
             }
         });
     };

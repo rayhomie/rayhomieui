@@ -67,7 +67,7 @@ var SubMenu = function (props) {
                 return React.cloneElement(childElement, { index: index + "-" + i }); //2-0
             }
             else {
-                console.error("Warning: Menu has a child which is not a MenuItem component");
+                console.error("Warning: SubMenu has a child which is not a MenuItem component");
             }
         });
         return React.createElement("ul", { className: subMenuClasses }, childrenComponent);

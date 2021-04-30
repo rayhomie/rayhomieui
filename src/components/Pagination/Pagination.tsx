@@ -120,7 +120,8 @@ const Pagination: React.FC<PaginationProps> = (props) => {
       setCur(cur + 1);
     }
   };
-  const inputRef = useRef<HTMLInputElement>(document.createElement("input"));
+  // @ts-ignore
+  const inputRef = useRef<HTMLInputElement>("");
   return (
     <div
       className={classnames("generateList", className, {
