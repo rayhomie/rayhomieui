@@ -43,7 +43,7 @@ const Tabs: React.FC<TabsProps> = (props) => {
         return React.cloneElement(childElement, { index: index });
       } else {
         console.error(
-          "Warning: Menu has a child which is not a TabItem component"
+          "Warning: Tabs has a child which is not a Tabs.Item component"
         );
       }
     });

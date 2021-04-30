@@ -50,7 +50,7 @@ const Menu: React.FC<MenuProps> = (props) => {
         return React.cloneElement(childElement, { index: index.toString() });
       } else {
         console.error(
-          "Warning: Menu has a child which is not a MenuItem component"
+          "Warning: Menu has a child which is not a Menu.Item or Menu.SubMenu component"
         );
       }
     });
