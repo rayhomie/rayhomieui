@@ -1,5 +1,6 @@
-# Rayhomie UI
+# [Rayhomie UI](http://ui.rayhomie.icu/)
 
+文档：http://ui.rayhomie.icu/
 ## 安装依赖
 
 ```bash
