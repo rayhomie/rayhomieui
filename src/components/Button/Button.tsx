@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 export enum ButtonSize {
   Large = "lg",
-  Small = "small",
+  Small = "sm",
 }
 
 export enum ButtonType {
@@ -16,7 +16,7 @@ export enum ButtonType {
 export interface BaseButtonProps {
   className?: string;
   disabled?: boolean;
-  size?: "lg" | "small";
+  size?: "lg" | "sm";
   btnType?: "primary" | "default" | "danger" | "link";
   children: React.ReactNode;
   href?: string; //link有href才是有效的

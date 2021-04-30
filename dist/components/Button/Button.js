@@ -25,7 +25,7 @@ import classNames from "classnames";
 export var ButtonSize;
 (function (ButtonSize) {
     ButtonSize["Large"] = "lg";
-    ButtonSize["Small"] = "small";
+    ButtonSize["Small"] = "sm";
 })(ButtonSize || (ButtonSize = {}));
 export var ButtonType;
 (function (ButtonType) {

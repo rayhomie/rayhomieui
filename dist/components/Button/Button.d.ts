@@ -1,7 +1,7 @@
 import React from "react";
 export declare enum ButtonSize {
     Large = "lg",
-    Small = "small"
+    Small = "sm"
 }
 export declare enum ButtonType {
     Primary = "primary",
@@ -12,7 +12,7 @@ export declare enum ButtonType {
 export interface BaseButtonProps {
     className?: string;
     disabled?: boolean;
-    size?: "lg" | "small";
+    size?: "lg" | "sm";
     btnType?: "primary" | "default" | "danger" | "link";
     children: React.ReactNode;
     href?: string;
