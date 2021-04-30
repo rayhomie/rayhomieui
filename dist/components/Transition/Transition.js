@@ -20,8 +20,8 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import React from 'react';
-import { CSSTransition } from 'react-transition-group';
+import React from "react";
+import { CSSTransition } from "react-transition-group";
 var Transition = function (props) {
     var children = props.children, classNames = props.classNames, animation = props.animation, restProps = __rest(props, ["children", "classNames", "animation"]);
     return (React.createElement(CSSTransition //如果传入了classNames属性，就使用classNames属性，不使用自定义的animation
@@ -29,7 +29,8 @@ var Transition = function (props) {
         React.createElement("div", null, children)));
 };
 Transition.defaultProps = {
+    //默认
     unmountOnExit: true,
-    appear: true
+    appear: true,
 };
 export default Transition;

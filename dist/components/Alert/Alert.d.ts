@@ -5,7 +5,7 @@ export declare enum AlertType {
     Danger = "danger",
     Warning = "warning"
 }
-interface BaseAlertProps {
+export interface BaseAlertProps {
     className?: string;
     alertType?: "default" | "success" | "danger" | "warning";
     description?: string;

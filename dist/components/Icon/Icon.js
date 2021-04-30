@@ -21,15 +21,15 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 //对react-fontawesome库进行二层封装
-import React from 'react';
-import classNames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from "react";
+import classNames from "classnames";
+import { FontAwesomeIcon, } from "@fortawesome/react-fontawesome";
 var Icon = function (props) {
     var _a;
     var className = props.className, theme = props.theme, restProps = __rest(props, ["className", "theme"]);
-    var classes = classNames('icon', className, (_a = {},
+    var classes = classNames("icon", className, (_a = {},
         _a["icon-" + theme] = theme,
         _a));
-    return (React.createElement(FontAwesomeIcon, __assign({ className: classes }, restProps)));
+    return React.createElement(FontAwesomeIcon, __assign({ className: classes }, restProps));
 };
 export default Icon;

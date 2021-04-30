@@ -1,7 +1,7 @@
-import React from 'react';
-import { FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
-export declare type ThemeProps = 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger';
-interface IconProps extends FontAwesomeIconProps {
+import React from "react";
+import { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
+export declare type ThemeProps = "primary" | "secondary" | "success" | "info" | "warning" | "danger";
+export interface IconProps extends FontAwesomeIconProps {
     theme?: ThemeProps;
     className?: string;
 }
