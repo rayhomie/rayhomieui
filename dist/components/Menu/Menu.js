@@ -24,7 +24,7 @@ var Menu = function (props) {
     var renderChildren = function () {
         return React.Children.map(children, function (child, index) {
             var childElement = child; //类型断言
-            var displayName = childElement.type.displayName; //取出child的displayName
+            var displayName = childElement.props.displayName; //取出child的displayName
             if (displayName === "MenuItem" || displayName === "SubMenu") {
                 return React.cloneElement(childElement, { index: index.toString() });
             }

@@ -1,5 +1,6 @@
-import React from 'react';
+import React from "react";
 export interface SubMenuProps {
+    displayName?: "SubMenu";
     index?: string;
     title: string;
     className?: string;

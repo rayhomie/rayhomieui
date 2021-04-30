@@ -45,7 +45,7 @@ const Menu: React.FC<MenuProps> = (props) => {
   const renderChildren = () => {
     return React.Children.map(children, (child, index) => {
       const childElement = child as React.FunctionComponentElement<MenuItemProps>; //类型断言
-      const { displayName } = childElement.type; //取出child的displayName
+      const { displayName } = childElement.props; //取出child的displayName
       if (displayName === "MenuItem" || displayName === "SubMenu") {
         return React.cloneElement(childElement, { index: index.toString() });
       } else {

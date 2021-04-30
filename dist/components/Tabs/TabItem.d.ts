@@ -1,5 +1,6 @@
-import React from 'react';
+import React from "react";
 export interface TabItemProps {
+    displayName?: "TabItem";
     index?: number;
     disabled?: boolean;
     className?: string;
