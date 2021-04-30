@@ -15,7 +15,7 @@ export interface SubMenuProps {
 }
 const SubMenu: React.FC<SubMenuProps> = (props) => {
   const [open, setOpen] = useState(false); //控制开关
-  const { index, title, className, children } = props;
+  const { index, title, className, children, displayName = "SubMenu" } = props;
   const context = useContext(MenuContext);
   const classes = classNames("menu-item submenu-item", className, {
     "is-active": context.index === index,

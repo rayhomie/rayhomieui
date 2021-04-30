@@ -12,7 +12,15 @@ export interface TabItemProps {
 }
 
 const TabItem: React.FC<TabItemProps> = (props) => {
-  const { style, labal, index, disabled, className, children } = props;
+  const {
+    style,
+    labal,
+    index,
+    disabled,
+    className,
+    children,
+    displayName = "TabItem",
+  } = props;
   const context = useContext(TabsContext); //使用共享的context
   const classes = classNames("tab-item", className, {
     "is-disabled": disabled,
