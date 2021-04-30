@@ -21,6 +21,7 @@ export interface BaseAlertProps {
   closeable?: boolean; //是否显示关闭图标
   onClose?: () => void; //关闭alert时触发的事件
   visible: boolean; //显示状态
+  style?: React.CSSProperties;
 }
 
 const Alert: React.FC<BaseAlertProps> = (props) => {
@@ -32,6 +33,7 @@ const Alert: React.FC<BaseAlertProps> = (props) => {
     closeable,
     onClose,
     visible,
+    style,
   } = props;
   const classes = classNames("alt", className, {
     [`alt-${alertType}`]: alertType,
@@ -65,7 +67,7 @@ const Alert: React.FC<BaseAlertProps> = (props) => {
         animation="zoom-in-left"
         timeout={400} //设置过渡动画事件
       >
-        <div className={classes}>
+        <div className={classes} style={style}>
           <span className="alt-title">{title}</span>
           <p className="alt-description">{description}</p>
           <span className={closeIconClasses || "alt-close-none"}>

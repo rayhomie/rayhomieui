@@ -1,12 +1,16 @@
 import { FC } from "react";
-import Menu, { MenuProps } from "./Menu";
-import MenuItem, { MenuItemProps } from "./MenuItem";
-import SubMenu, { SubMenuProps } from "./SubMenu";
+import Menu, { MenuProps as RMenuProps } from "./Menu";
+import MenuItem, { MenuItemProps as RMenuItemProps } from "./MenuItem";
+import SubMenu, { SubMenuProps as RSubMenuProps } from "./SubMenu";
 
-export type IMenuComponent = FC<MenuProps> & {
-  Item: FC<MenuItemProps>;
-  SubMenu: FC<SubMenuProps>;
+export type IMenuComponent = FC<RMenuProps> & {
+  Item: FC<RMenuItemProps>;
+  SubMenu: FC<RSubMenuProps>;
 };
+
+export interface MenuProps extends RMenuProps {}
+export interface MenuItemProps extends RMenuItemProps {}
+export interface SubMenuProps extends RSubMenuProps {}
 
 //断言
 const TransMenu = Menu as IMenuComponent;
