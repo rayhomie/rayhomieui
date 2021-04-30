@@ -13,6 +13,7 @@ export interface BaseAlertProps {
     closeable?: boolean;
     onClose?: () => void;
     visible: boolean;
+    style?: React.CSSProperties;
 }
 declare const Alert: React.FC<BaseAlertProps>;
 export default Alert;

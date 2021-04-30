@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import classNames from "classnames";
 import { TabsContext } from "./Tabs";
 var TabItem = function (props) {
-    var style = props.style, labal = props.labal, index = props.index, disabled = props.disabled, className = props.className, children = props.children;
+    var style = props.style, labal = props.labal, index = props.index, disabled = props.disabled, className = props.className, children = props.children, _a = props.displayName, displayName = _a === void 0 ? "TabItem" : _a;
     var context = useContext(TabsContext); //使用共享的context
     var classes = classNames("tab-item", className, {
         "is-disabled": disabled,

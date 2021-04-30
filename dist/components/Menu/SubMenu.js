@@ -18,7 +18,7 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 library.add(fas);
 var SubMenu = function (props) {
     var _a = useState(false), open = _a[0], setOpen = _a[1]; //控制开关
-    var index = props.index, title = props.title, className = props.className, children = props.children;
+    var index = props.index, title = props.title, className = props.className, children = props.children, _b = props.displayName, displayName = _b === void 0 ? "SubMenu" : _b;
     var context = useContext(MenuContext);
     var classes = classNames("menu-item submenu-item", className, {
         "is-active": context.index === index,

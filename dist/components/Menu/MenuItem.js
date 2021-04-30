@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import classNames from "classnames";
 import { MenuContext } from "./Menu";
 var MenuItem = function (props) {
-    var index = props.index, disabled = props.disabled, className = props.className, style = props.style, children = props.children;
+    var index = props.index, disabled = props.disabled, className = props.className, style = props.style, children = props.children, _a = props.displayName, displayName = _a === void 0 ? "MenuItem" : _a;
     var context = useContext(MenuContext); //使用共享的context
     var classes = classNames("menu-item", className, {
         "is-disabled": disabled,

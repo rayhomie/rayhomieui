@@ -15,7 +15,7 @@ export var AlertType;
 })(AlertType || (AlertType = {}));
 var Alert = function (props) {
     var _a;
-    var className = props.className, alertType = props.alertType, title = props.title, description = props.description, closeable = props.closeable, onClose = props.onClose, visible = props.visible;
+    var className = props.className, alertType = props.alertType, title = props.title, description = props.description, closeable = props.closeable, onClose = props.onClose, visible = props.visible, style = props.style;
     var classes = classNames("alt", className, (_a = {},
         _a["alt-" + alertType] = alertType,
         _a));
@@ -25,7 +25,7 @@ var Alert = function (props) {
     var onclose = onClose; //类型断言
     return (React.createElement(React.Fragment, null,
         React.createElement(Transition, { in: visible, animation: "zoom-in-left", timeout: 400 },
-            React.createElement("div", { className: classes },
+            React.createElement("div", { className: classes, style: style },
                 React.createElement("span", { className: "alt-title" }, title),
                 React.createElement("p", { className: "alt-description" }, description),
                 React.createElement("span", { className: closeIconClasses || "alt-close-none" },
